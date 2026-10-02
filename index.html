@@ -1,24 +1,305 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="fr">
 <head>
-  <link rel="stylesheet" href="style.css">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Skill Swap</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CHNOWA - What's happening?</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <h1>Skill Swap 🔄</h1>
 
-  <form id="skill-form">
-    <input type="text" id="name" placeholder="اYour Name" required>
-    <input type="text" id="teach" placeholder="Skill you can teach" required>
-    <input type="text" id="learn" placeholder="Skill you want to learn" required>
-    <button type="submit">Submit</button>
-  </form>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <span>CHN</span>OWA
+        </div>
 
-  <ul id="list"></ul>
+        <nav>
+            <a href="#home">Accueil</a>
+            <a href="#discover">Découvrir</a>
+            <a href="#map">Carte</a>
+        </nav>
 
-  <script src="script.js"></script>
+        <button class="login-btn">Se connecter</button>
+    </header>
+
+
+    <!-- HERO -->
+    <main id="home">
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="badge">
+                    <span class="live-dot"></span>
+                    Informations locales en direct
+                </div>
+
+                <h1>
+                    Tout ce qui se passe
+                    <span>autour de vous.</span>
+                </h1>
+
+                <p>
+                    Découvrez les événements, alertes, services
+                    et informations importantes près de chez vous.
+                </p>
+
+                <div class="location-box">
+                    <span class="location-icon">📍</span>
+
+                    <div>
+                        <small>Votre zone</small>
+                        <strong>Mateur, Tunisie</strong>
+                    </div>
+
+                    <button onclick="changeLocation()">Changer</button>
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+                <img
+                    src="https://images.unsplash.com/photo-1524666041070-9cff998f8a4f?auto=format&fit=crop&w=1200&q=80"
+                    alt="City">
+            </div>
+
+        </section>
+
+
+        <!-- CATEGORIES -->
+        <section class="categories" id="discover">
+
+            <div class="section-title">
+                <div>
+                    <span>EXPLORER</span>
+                    <h2>Qu'est-ce qui vous intéresse ?</h2>
+                </div>
+            </div>
+
+            <div class="category-grid">
+
+                <button class="category-card active">
+                    <div class="category-icon">🔥</div>
+                    <strong>Tout</strong>
+                    <small>Tout voir</small>
+                </button>
+
+                <button class="category-card">
+                    <div class="category-icon">🚧</div>
+                    <strong>Routes</strong>
+                    <small>Travaux & trafic</small>
+                </button>
+
+                <button class="category-card">
+                    <div class="category-icon">🎓</div>
+                    <strong>Éducation</strong>
+                    <small>Universités & écoles</small>
+                </button>
+
+                <button class="category-card">
+                    <div class="category-icon">⚡</div>
+                    <strong>Services</strong>
+                    <small>Eau & électricité</small>
+                </button>
+
+                <button class="category-card">
+                    <div class="category-icon">🎉</div>
+                    <strong>Événements</strong>
+                    <small>Autour de vous</small>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ALERT + MAP -->
+        <section class="main-grid">
+
+            <div class="feed">
+
+                <div class="feed-header">
+                    <div>
+                        <span>MAINTENANT</span>
+                        <h2>À proximité</h2>
+                    </div>
+
+                    <button class="filter-btn">Filtrer ☰</button>
+                </div>
+
+
+                <!-- CARD 1 -->
+                <article class="info-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1545459720-aac8509eb02c?auto=format&fit=crop&w=600&q=80"
+                        alt="Traffic">
+
+                    <div class="info-content">
+
+                        <div class="card-top">
+                            <span class="tag road">🚧 ROUTE</span>
+                            <span class="time">Il y a 20 min</span>
+                        </div>
+
+                        <h3>Travaux sur la route principale</h3>
+
+                        <p>
+                            Des travaux sont actuellement signalés.
+                            Prévoyez un autre itinéraire.
+                        </p>
+
+                        <div class="card-footer">
+                            <span>📍 Centre-ville</span>
+                            <span class="verified">✓ Vérifié</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 2 -->
+                <article class="info-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80"
+                        alt="University">
+
+                    <div class="info-content">
+
+                        <div class="card-top">
+                            <span class="tag education">🎓 ÉDUCATION</span>
+                            <span class="time">Il y a 1h</span>
+                        </div>
+
+                        <h3>Nouvelle information universitaire</h3>
+
+                        <p>
+                            Une nouvelle annonce vient d'être publiée.
+                        </p>
+
+                        <div class="card-footer">
+                            <span>📍 Université</span>
+                            <span class="verified">✓ Officiel</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 3 -->
+                <article class="info-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=600&q=80"
+                        alt="Event">
+
+                    <div class="info-content">
+
+                        <div class="card-top">
+                            <span class="tag event">🎉 ÉVÉNEMENT</span>
+                            <span class="time">Il y a 2h</span>
+                        </div>
+
+                        <h3>Événement près de chez vous</h3>
+
+                        <p>
+                            Découvrez ce qui se passe aujourd'hui dans votre zone.
+                        </p>
+
+                        <div class="card-footer">
+                            <span>📍 Mateur</span>
+                            <span>→ Voir plus</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- MAP -->
+            <aside class="map-container" id="map">
+
+                <div class="map-header">
+                    <div>
+                        <span>CARTE</span>
+                        <h2>Autour de vous</h2>
+                    </div>
+
+                    <button>⌖</button>
+                </div>
+
+                <div class="fake-map">
+
+                    <div class="map-road road-1"></div>
+                    <div class="map-road road-2"></div>
+                    <div class="map-road road-3"></div>
+
+                    <div class="map-point point-1">🚧</div>
+                    <div class="map-point point-2">🎓</div>
+                    <div class="map-point point-3">🎉</div>
+
+                    <div class="you">
+                        <span></span>
+                        Vous êtes ici
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+
+        <!-- REPORT -->
+        <section class="report-section">
+
+            <div>
+                <span>VOUS AVEZ VU QUELQUE CHOSE ?</span>
+
+                <h2>
+                    Partagez l'information
+                    avec votre communauté.
+                </h2>
+
+                <p>
+                    Signalez rapidement une situation importante
+                    autour de vous.
+                </p>
+            </div>
+
+            <button class="report-btn" onclick="reportSomething()">
+                + Signaler quelque chose
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <div class="logo">
+            <span>CHN</span>OWA
+        </div>
+
+        <p>Les informations qui comptent, au bon endroit.</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
 </body>
 </html>
